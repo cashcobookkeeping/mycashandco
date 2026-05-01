@@ -243,27 +243,26 @@ h2.stitle em{font-style:italic;color:var(--terra);}
 
 @media screen and (max-width: 447px) {
 .nav-logo img{height:52px;width:auto;}
-  [id] {scroll-margin-top: 80px;}
 .hero-content{padding:0 1.8rem 1.2rem;}
 .hero-sub{line-height:1.5;font-size: 1.0rem;}
 .btn-terra{padding:.9rem 1.0rem;}
 .btn-outline{padding:.75rem 1.0rem;}
-
 }
-
+ 
 @media screen and (max-width: 500px) {
-  .container {width:100%;padding: 30px 20px; /* Reduce padding so it doesn't feel cramped */}
+  .container {width:100%;padding: 30px 20px;}
   .btn {padding: 12px 25px; font-size: 11px; width: 50%;border-radius: 24px; }
   .row {display:grid;grid-template-columns:1fr;}
-     /* burger button — hidden on desktop */
+}
+ 
+/* burger button — hidden on desktop */
 .burger {display: none;flex-direction: column;gap: 5px;background: none;border: none;cursor: pointer;padding: 4px;}
 .burger span {display: block;width: 24px;height: 2px;background: var(--ink);border-radius: 2px;transition: all 0.3s;}
 /* animate to X when open */
 .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .burger.open span:nth-child(2) { opacity: 0; }
 .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-}
-
+ 
 @media (max-width: 768px) {
   .burger {display: flex;}
   .nav-links {display: none;position: absolute; top: 100%;left: 0;right: 0;background: var(--warm-white);flex-direction: column;padding: 1.5rem 2rem;gap: 1.25rem;border-bottom: 1.5px solid #E8DDD0;box-shadow: 0 8px 24px rgba(0,0,0,0.08);}
@@ -272,7 +271,6 @@ h2.stitle em{font-style:italic;color:var(--terra);}
 }
  
  
-
 
 /* TESTIMONIAL */
 .testimonial-section{background:var(--sage);padding:3.5rem 2.5rem;position:relative;overflow:hidden;}
