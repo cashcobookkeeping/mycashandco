@@ -656,13 +656,11 @@ How could I ever live without Kristin?! She has such great attention to detail. 
 
   form.addEventListener("submit", function(event) {
     event.preventDefault();
-   
-    // These names on the left (Name, BusinessName, etc.) 
-    // MUST match what your .gs script uses.
+
     const formData = {
       Name: form.elements["Name"].value,
-      BusinessName: form.elements["BusinessName"].value, // Removed the space
-      Phone: form.elements["Phone"].value,               // Changed from "Phone Number"
+      BusinessName: form.elements["BusinessName"].value,
+      Phone: form.elements["Phone"].value,
       Email: form.elements["Email"].value,
       Message: form.elements["Message"].value.replace(/</g, "&lt;").replace(/>/g, "&gt;")
     };
@@ -671,18 +669,23 @@ How could I ever live without Kristin?! She has such great attention to detail. 
     btn.value = "Sending...";
     btn.disabled = true;
 
-    google.script.run
-      .withSuccessHandler(() => {
-        // This is what makes the box turn into the thank you message
-        wrapper.innerHTML = "<h4>Thank you!<br><br>I'll be in touch soon.</h4>";
-      })
-      .withFailureHandler((err) => {
-        // This helps us see if something else goes wrong
-        alert("Wait, something went wrong: " + err);
-        btn.value = "Send message";
-        btn.disabled = false;
-      })
-      .submitFormData(formData);
+    // 👇 Replace this URL with your actual Google Apps Script web app URL
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzecmNcx1RXmMQnMiYnbLTcfVidGA6e9cT0XfFDyTTQWAiOjFgjXrSylVUJBkVQL6k/exec";
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    })
+    .then(() => {
+      wrapper.innerHTML = "<h4>Thank you!<br><br>I'll be in touch soon.</h4>";
+    })
+    .catch((err) => {
+      alert("Something went wrong: " + err);
+      btn.value = "Let's chat →";
+      btn.disabled = false;
+    });
   });
 </script>
     <a href="mailto:cashcobookkeeping@gmail.com" class="cta-email">cashcobookkeeping@gmail.com</a>
