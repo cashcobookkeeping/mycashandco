@@ -30,29 +30,119 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": "Cash & Co. Bookkeeping",
-  "description": "Professional bookkeeping for cafes, bookstores, and wellness providers.",
-  "url": "https://www.mycashandco.com/",
+  "description": "Professional bookkeeping for cafes, restaurants, bookstores, and wellness providers. QuickBooks and Xero certified. Starting at $300/month. Judgment-free, tax-ready books every month.",
+  "url": "https://cashcobookkeeping.github.io/mycashandco/",
   "email": "cashcobookkeeping@gmail.com",
   "logo": "https://cashcobookkeeping.github.io/mycashandco/Logo-long.png",
+  "image": "https://cashcobookkeeping.github.io/mycashandco/headshot.jpg",
+  "founder": {
+    "@type": "Person",
+    "name": "Kristin",
+    "jobTitle": "Bookkeeper"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Rochester",
+    "addressRegion": "NY",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "United States"
+  },
+  "knowsAbout": [
+    "Bookkeeping",
+    "QuickBooks Online",
+    "Xero",
+    "Small business accounting",
+    "Cafe bookkeeping",
+    "Restaurant bookkeeping",
+    "Wellness practice bookkeeping",
+    "Retail bookkeeping"
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "QuickBooks Online Certified ProAdvisor"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Xero Certified Advisor"
+    }
+  ],
   "sameAs": [
     "https://instagram.com/cashcobookkeeping",
     "https://facebook.com/cashcobookkeeping"
   ],
   "priceRange": "$$",
-  "serviceArea": {
-    "@type": "AdministrativeArea",
-    "name": "United States"
-  },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Bookkeeping Services",
     "itemListElement": [
-      { "@type": "Offer", "name": "Monthly Essentials", "price": "300", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Monthly Enhanced", "price": "600", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Quarterly Oversight", "price": "350", "priceCurrency": "USD" }
+      {
+        "@type": "Offer",
+        "name": "Monthly Essentials",
+        "description": "For practices on Stripe, Square, or Jane. Clean books, no stress.",
+        "price": "300",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "300",
+          "priceCurrency": "USD",
+          "unitText": "month"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Monthly Enhanced",
+        "description": "Full-scale bookkeeping for cafes and multi-platform operations with payroll.",
+        "price": "600",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "600",
+          "priceCurrency": "USD",
+          "unitText": "month"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Quarterly Oversight",
+        "description": "Quarterly bookkeeping for smaller operations not ready for a full monthly commitment.",
+        "price": "350",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "350",
+          "priceCurrency": "USD",
+          "unitText": "quarter"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Multi-Month Cleanup",
+        "description": "Months behind? Full categorization, reconciliation, and tax-ready reports.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "description": "Custom pricing based on scope"
+        }
+      }
     ]
+  },
+  "review": {
+    "@type": "Review",
+    "author": {
+      "@type": "Person",
+      "name": "Devon V."
+    },
+    "reviewBody": "How could I ever live without Kristin?! She has such great attention to detail. She's the best bookkeeper I've ever worked with.",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5"
+    }
   }
 }
 </script>
