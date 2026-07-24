@@ -323,6 +323,74 @@ footer{background:var(--ink);padding: 2.75rem 2.5rem;display: grid;align-items: 
   .form-submit{flex-direction:column;align-items:flex-start;}
   .contact-form{padding:1.75rem;}
 }
+
+  .faq-section {
+  padding: 80px 24px;
+  background: #f9f6f0; /* adjust to match your site background */
+}
+
+.faq-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faq-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.faq-item {
+  border-top: 1px solid #d4c9b0;
+}
+
+.faq-item:last-child {
+  border-bottom: 1px solid #d4c9b0;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif; /* match your heading font */
+  color: #2d4a35;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
+
+.faq-icon {
+  font-size: 22px;
+  color: #c8a96e;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 0 22px;
+}
+
+.faq-answer p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #5a4a38;
+}
+
+.faq-answer.open {
+  display: block;
+}
+  
 </style>
 </head>
 <body>
@@ -615,6 +683,77 @@ How could I ever live without Kristin?! She has such great attention to detail. 
   </div>
 </section>
 
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <p class="section-label">Common Questions</p>
+    <h2>Things you might be <em>wondering</em></h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do I need to already be on QuickBooks or Xero?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Nope — if you're not set up yet, I'll handle it. If you're already on a platform, I'll work within what you have. I'm certified in both QuickBooks Online and Xero, so either way you're covered.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What if I'm months (or years) behind?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>That's exactly what the Multi-Month Cleanup plan is for. No judgment — seriously. I've seen it all. We figure out where things stand, make a plan, and get you caught up so you can move forward clean.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with businesses outside of Rochester?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! I'm based in Rochester, NY but work with small businesses nationwide. Everything is handled remotely — all you need is an internet connection and a willingness to hand off the stress.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          How does the intro chat work?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>It's a free, low-pressure conversation — usually 20–30 minutes. We talk through your business, your current setup, and what's feeling chaotic. You'll leave with a clear idea of what working together would look like, with zero obligation.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What platforms and POS systems do you work with?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>I work with Square, Toast, Clover, Stripe, Jane, Gusto, ADP, and more. If you're using something not on that list, just ask — chances are I've worked with it or can learn it quickly.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What does "tax-ready" actually mean?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>It means your books are clean, categorized, and reconciled every month so that when tax season comes, your accountant can just do their job — no scrambling, no catching up, no expensive clean-up hours billed at CPA rates.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
 <section class="cta-section" id="cta">
   <div class="cta-inner">
     <h2>Ready to <em>leave the stress</em> behind?</h2>
@@ -704,9 +843,29 @@ How could I ever live without Kristin?! She has such great attention to detail. 
     <a href="mailto:cashcobookkeeping@gmail.com">cashcobookkeeping@gmail.com</a>
   </div>
   <p class="footer-copy">Based in Rochester, NY · Serving small businesses nationwide</p>
-<p class="footer-copy">© 2026 Cash & Co. Bookkeeping</p>
+<p class="footer-copy">©2025 Cash & Co. Bookkeeping</p>
 </footer>
 
+  <script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      // Close all others
+      document.querySelectorAll('.faq-question').forEach(b => {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+
+      // Toggle this one
+      if (!isOpen) {
+        button.setAttribute('aria-expanded', 'true');
+        answer.classList.add('open');
+      }
+    });
+  });
+</script>
 </body>
 </html>
 
